@@ -30,7 +30,9 @@ while True:  # циклический ввод данных от пользов�
         print('Возможные  операции данного калькулятора: ', list(calculator.keys()))
         a = float(input('введите первое число >>> '))
         b = None
-        operation = input('введите операцию >>> ').lower().strip()
+        operation = None
+        while operation not in list(calculator.keys()):
+            operation = input('введите операцию из : ' + str(list(calculator.keys()))).lower().strip()
         if operation == 'sin':
             break
         elif operation == 'cos':
@@ -57,3 +59,5 @@ else:
 
 if result is not None:
     print('Результат операции = ', result)
+    print('конец программы')
+    exit()
